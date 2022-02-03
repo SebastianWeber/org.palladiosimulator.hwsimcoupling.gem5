@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5"
+         name="Gem5 Scheduler"
+         point="de.uka.ipd.sdq.scheduler">
+      <scheduler
+            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5SchedulerExtensionFactory">
+      </scheduler>
+   </extension>
+   
+    <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://GEM5_SCHEDULER_MODELS/"
+            target="platform:/plugin/org.palladiosimulator.hwsimcoupling.gem5/models/">
+      </mapping>
+   </extension>
+
+</plugin>

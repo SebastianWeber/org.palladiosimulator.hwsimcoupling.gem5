@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourcetype:ResourceRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourcetype="http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.2">
+  <resourceInterfaces__ResourceRepository id="_IDBDMFT0EeyzAbOg6oU9nQ" entityName="Gem5CPUInterface">
+    <resourceSignatures__ResourceInterface id="_LIMnAFT0EeyzAbOg6oU9nQ" entityName="processGem5">
+      <parameter__ResourceSignature parameterName="methodname">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameter__ResourceSignature>
+      <parameter__ResourceSignature parameterName="parameter">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameter__ResourceSignature>
+      <parameter__ResourceSignature parameterName="system">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameter__ResourceSignature>
+      <parameter__ResourceSignature parameterName="executable">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameter__ResourceSignature>
+      <parameter__ResourceSignature parameterName="processingrate">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameter__ResourceSignature>
+    </resourceSignatures__ResourceInterface>
+  </resourceInterfaces__ResourceRepository>
+  <schedulingPolicies__ResourceRepository id="org.palladiosimulator.hwsimcoupling.scheduler.gem5" entityName="Gem5Scheduler"/>
+  <availableResourceTypes_ResourceRepository xsi:type="resourcetype:ProcessingResourceType" id="_d7xtMlRaEeydLN_tauPTfQ" entityName="Gem5CPU">
+    <resourceProvidedRoles__ResourceInterfaceProvidingEntity id="_4CzgcFRaEeydLN_tauPTfQ" entityName="Gem5ProvidedResource" providedResourceInterface__ResourceProvidedRole="_IDBDMFT0EeyzAbOg6oU9nQ"/>
+  </availableResourceTypes_ResourceRepository>
+</resourcetype:ResourceRepository>
