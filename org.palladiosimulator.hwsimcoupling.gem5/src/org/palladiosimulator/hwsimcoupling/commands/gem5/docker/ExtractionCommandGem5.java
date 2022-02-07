@@ -1,4 +1,4 @@
-package org.palladiosimulator.hwsimcoupling.commands.gem5;
+package org.palladiosimulator.hwsimcoupling.commands.gem5.docker;
 
 import java.util.List;
 

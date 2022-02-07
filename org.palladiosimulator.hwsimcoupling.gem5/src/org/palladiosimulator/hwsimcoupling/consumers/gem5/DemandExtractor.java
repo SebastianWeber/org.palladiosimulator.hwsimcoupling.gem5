@@ -4,12 +4,14 @@ import org.palladiosimulator.hwsimcoupling.consumers.OutputConsumer;
 
 public class DemandExtractor implements OutputConsumer {
 
-	double demand;
+	private final String keyword = "Demand:";
+	
+	private double demand;
 	
 	@Override
 	public void accept(String t) {
-		if (t.contains("Demand:")) {
-			demand = Double.parseDouble(t.replace("Demand:", ""));
+		if (t.contains(keyword)) {
+			demand = Double.parseDouble(t.replace(keyword, ""));
 		}
 	}
 	

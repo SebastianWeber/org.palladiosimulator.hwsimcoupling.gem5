@@ -1,4 +1,4 @@
-package org.palladiosimulator.hwsimcoupling.commands.gem5;
+package org.palladiosimulator.hwsimcoupling.commands.gem5.docker;
 
 import java.util.List;
 
@@ -27,7 +27,9 @@ public class SimulationCommandGem5 extends CommandGem5 implements SimulationComm
 		command.add("build/X86/gem5.opt");
 		command.add(destination_path + system);
 		command.add(executable);
-		command.add(methodname);
+		if (! ( methodname.equals("main") || methodname.equals("")) ) {
+			command.add(methodname);
+		}
 		for (String parameter : parameters.split(" ")) {
 			command.add(parameter);
 		}

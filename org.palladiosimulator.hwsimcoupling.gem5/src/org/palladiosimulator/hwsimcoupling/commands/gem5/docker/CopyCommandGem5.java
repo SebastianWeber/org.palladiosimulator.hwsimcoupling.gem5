@@ -1,4 +1,4 @@
-package org.palladiosimulator.hwsimcoupling.commands.gem5;
+package org.palladiosimulator.hwsimcoupling.commands.gem5.docker;
 
 import java.io.File;
 import java.util.List;
@@ -12,8 +12,7 @@ public class CopyCommandGem5 extends CommandGem5 implements CopyCommand{
 
 	public CopyCommandGem5(String source_path) {
 		this.source_path = source_path;
-		File source_file = new File(source_path);
-		this.destination_filename = source_file.getName();
+		this.destination_filename = new File(source_path).getName();
 	}
 	
 	public List<String> get_command(){

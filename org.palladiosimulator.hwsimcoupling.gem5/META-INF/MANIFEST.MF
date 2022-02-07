@@ -13,5 +13,6 @@ Require-Bundle: de.uka.ipd.sdq.scheduler;bundle-version="5.0.0",
  de.uka.ipd.sdq.simucomframework.variables;bundle-version="5.0.0",
  de.uka.ipd.sdq.probfunction.math;bundle-version="5.0.0",
  de.uka.ipd.sdq.pcm.stochasticexpressions;bundle-version="5.0.0",
- org.palladiosimulator.hwsimcoupling;bundle-version="1.0.0"
+ org.palladiosimulator.hwsimcoupling;bundle-version="1.0.0",
+ org.eclipse.core.resources
 Import-Package: org.apache.log4j

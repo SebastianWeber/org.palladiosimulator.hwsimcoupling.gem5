@@ -3,7 +3,7 @@ package org.palladiosimulator.hwsimcoupling.scheduler.resources.active.gem5;
 import java.io.Serializable;
 import java.util.Map;
 
-import org.palladiosimulator.hwsimcoupling.commands.gem5.CommandHandlerGem5;
+import org.palladiosimulator.hwsimcoupling.commands.gem5.docker.CommandHandlerGem5;
 import org.palladiosimulator.hwsimcoupling.util.impl.DemandCacheImpl;
 
 import de.uka.ipd.sdq.scheduler.ISchedulableProcess;
