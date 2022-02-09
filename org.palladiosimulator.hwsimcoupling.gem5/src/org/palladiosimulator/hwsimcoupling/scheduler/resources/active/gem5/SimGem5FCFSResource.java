@@ -10,13 +10,13 @@ import org.palladiosimulator.hwsimcoupling.util.impl.DemandCacheImpl;
 import de.uka.ipd.sdq.scheduler.ISchedulableProcess;
 import de.uka.ipd.sdq.scheduler.SchedulerModel;
 import de.uka.ipd.sdq.scheduler.resources.active.IResourceTableManager;
-import de.uka.ipd.sdq.scheduler.resources.active.SimProcessorSharingResource;
+import de.uka.ipd.sdq.scheduler.resources.active.SimFCFSResource;
 
-public class SimGem5ProcessorSharingResource extends SimProcessorSharingResource {
+public class SimGem5FCFSResource extends SimFCFSResource {
 	
 	private static DemandCacheImpl demandCache;
 	
-	public SimGem5ProcessorSharingResource(SchedulerModel model, String name, String id, long capacity,
+	public SimGem5FCFSResource(SchedulerModel model, String name, String id, long capacity,
 			IResourceTableManager resourceTableManager) {
 		super(model, name, id, capacity, resourceTableManager);
 		demandCache = DemandCacheImpl.getDemandCacheImpl(new CommandHandlerGem5());

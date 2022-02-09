@@ -2,11 +2,29 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5"
-         name="Gem5 Scheduler"
+         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.ProcessorSharing"
+         name="Gem5 Processor Sharing Scheduler"
          point="de.uka.ipd.sdq.scheduler">
       <scheduler
-            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5SchedulerExtensionFactory">
+            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5ProcessorSharingSchedulerExtensionFactory">
+      </scheduler>
+   </extension>
+   
+   <extension
+         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Delay"
+         name="Gem5 Delay Scheduler"
+         point="de.uka.ipd.sdq.scheduler">
+      <scheduler
+            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5DelaySchedulerExtensionFactory">
+      </scheduler>
+   </extension>
+   
+   <extension
+         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.FCFS"
+         name="Gem5 FCFS Scheduler"
+         point="de.uka.ipd.sdq.scheduler">
+      <scheduler
+            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5FCFSSchedulerExtensionFactory">
       </scheduler>
    </extension>
    

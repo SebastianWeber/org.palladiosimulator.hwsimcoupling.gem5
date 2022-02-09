@@ -7,9 +7,9 @@ import de.uka.ipd.sdq.scheduler.SchedulerModel;
 import de.uka.ipd.sdq.scheduler.factory.SchedulerExtensionFactory;
 import de.uka.ipd.sdq.scheduler.resources.active.IResourceTableManager;
 
-public class Gem5SchedulerExtensionFactory implements SchedulerExtensionFactory {
+public class Gem5ProcessorSharingSchedulerExtensionFactory implements SchedulerExtensionFactory {
 
-	public Gem5SchedulerExtensionFactory() {
+	public Gem5ProcessorSharingSchedulerExtensionFactory() {
 		
 	}
 	

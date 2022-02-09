@@ -6,16 +6,16 @@ public class DemandExtractor implements OutputConsumer {
 
 	private final String keyword = "Demand:";
 	
-	private double demand;
+	private String demand;
 	
 	@Override
 	public void accept(String t) {
 		if (t.contains(keyword)) {
-			demand = Double.parseDouble(t.replace(keyword, ""));
+			demand = t.replace(keyword, "");
 		}
 	}
 	
-	public double get_demand() {
+	public String get_demand() {
 		return demand;
 	}
 	
