@@ -1,8 +1,11 @@
 package org.palladiosimulator.hwsimcoupling.commands.gem5.docker;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.palladiosimulator.hwsimcoupling.commands.SimulationCommand;
+import org.palladiosimulator.hwsimcoupling.util.MapHelper;
 
 public class SimulationCommandGem5 extends CommandGem5 implements SimulationCommand {
 	
@@ -11,11 +14,11 @@ public class SimulationCommandGem5 extends CommandGem5 implements SimulationComm
 	private String methodname;
 	private String parameters;
 	
-	public SimulationCommandGem5(String system, String executable, String methodname, String parameters) {
-		this.executable = executable;
-		this.system = system;
-		this.methodname = methodname;
-		this.parameters = parameters;
+	public SimulationCommandGem5(Map<String, Serializable> parameterMap) {
+		this.executable = MapHelper.get_required_value_from_map(parameterMap, "executable");
+		this.system = MapHelper.get_required_value_from_map(parameterMap, "system");
+		this.methodname = MapHelper.get_required_value_from_map(parameterMap, "methodname");
+		this.parameters = MapHelper.get_required_value_from_map(parameterMap, "parameter");
 	}
 
 	@Override
@@ -27,7 +30,7 @@ public class SimulationCommandGem5 extends CommandGem5 implements SimulationComm
 		command.add("build/X86/gem5.opt");
 		command.add(destination_path + system);
 		command.add(executable);
-		if (! ( methodname.equals("main") || methodname.equals("")) ) {
+		if (!methodname.equals("main")) {
 			command.add(methodname);
 		}
 		for (String parameter : parameters.split(" ")) {

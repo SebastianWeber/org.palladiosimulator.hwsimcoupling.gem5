@@ -25,7 +25,7 @@ public class SimGem5DelayResource extends SimDelayResource {
 	@Override
 	protected void doProcessing(ISchedulableProcess process, int resourceServiceID,
             Map<String, Serializable> parameterMap, double demand) {
-		
+		parameterMap.put("coupled", "gem5");
 		this.doProcessing(process, resourceServiceID, demandCache.get(parameterMap, RESOURCE.CPU));
 
     }

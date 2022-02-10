@@ -1,5 +1,8 @@
 package org.palladiosimulator.hwsimcoupling.commands.gem5.docker;
 
+import java.io.Serializable;
+import java.util.Map;
+
 import org.palladiosimulator.hwsimcoupling.commands.CopyCommand;
 import org.palladiosimulator.hwsimcoupling.commands.ExtractionCommand;
 import org.palladiosimulator.hwsimcoupling.commands.SimulationCommand;
@@ -12,18 +15,18 @@ import org.palladiosimulator.hwsimcoupling.util.CommandHandler;
 public class CommandHandlerGem5 implements CommandHandler{
 
 	@Override
-	public CopyCommand getCopyCommand(String source_path) {
+	public CopyCommand getCopyCommand(Map<String, Serializable> parameterMap, String source_path) {
 		return new CopyCommandGem5(source_path);
 	}
 
 	@Override
-	public ExtractionCommand getExtractionCommand(String methodname) {
-		return new ExtractionCommandGem5(methodname);
+	public ExtractionCommand getExtractionCommand(Map<String, Serializable> parameterMap) {
+		return new ExtractionCommandGem5(parameterMap);
 	}
 
 	@Override
-	public SimulationCommand getSimulationCommand(String system, String executable, String methodname, String parameters) {
-		return new SimulationCommandGem5(system, executable, methodname, parameters);
+	public SimulationCommand getSimulationCommand(Map<String, Serializable> parameterMap) {
+		return new SimulationCommandGem5(parameterMap);
 	}
 
 	@Override
