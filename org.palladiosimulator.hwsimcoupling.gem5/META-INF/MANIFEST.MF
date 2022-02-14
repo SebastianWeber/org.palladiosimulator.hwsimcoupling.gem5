@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Gem5 Scheduler
-Bundle-SymbolicName: org.palladiosimulator.hwsimcoupling.gem5;singleton=true
+Bundle-SymbolicName: org.palladiosimulator.hwsimcoupling.gem5;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.hwsimcoupling.gem5
 Bundle-RequiredExecutionEnvironment: JavaSE-11

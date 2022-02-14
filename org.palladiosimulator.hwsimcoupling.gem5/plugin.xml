@@ -2,38 +2,14 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.ProcessorSharing"
-         name="Gem5 Processor Sharing Scheduler"
-         point="de.uka.ipd.sdq.scheduler">
-      <scheduler
-            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5ProcessorSharingSchedulerExtensionFactory">
-      </scheduler>
+         point="org.palladiosimulator.hwsimcoupling.hwsim">
+      <hwsim
+            class="org.palladiosimulator.hwsimcoupling.commands.gem5.docker.CommandHandlerGem5"
+            name="gem5">
+      </hwsim>
    </extension>
    
-   <extension
-         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Delay"
-         name="Gem5 Delay Scheduler"
-         point="de.uka.ipd.sdq.scheduler">
-      <scheduler
-            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5DelaySchedulerExtensionFactory">
-      </scheduler>
-   </extension>
    
-   <extension
-         id="org.palladiosimulator.hwsimcoupling.scheduler.gem5.FCFS"
-         name="Gem5 FCFS Scheduler"
-         point="de.uka.ipd.sdq.scheduler">
-      <scheduler
-            class="org.palladiosimulator.hwsimcoupling.scheduler.gem5.Gem5FCFSSchedulerExtensionFactory">
-      </scheduler>
-   </extension>
    
-    <extension
-         point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping
-            source="pathmap://GEM5_SCHEDULER_MODELS/"
-            target="platform:/plugin/org.palladiosimulator.hwsimcoupling.gem5/models/">
-      </mapping>
-   </extension>
 
 </plugin>
