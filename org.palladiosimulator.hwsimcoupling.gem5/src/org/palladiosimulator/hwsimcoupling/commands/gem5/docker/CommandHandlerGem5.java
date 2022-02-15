@@ -13,16 +13,11 @@ import org.palladiosimulator.hwsimcoupling.consumers.gem5.ErrorDetector;
 import org.palladiosimulator.hwsimcoupling.util.CommandHandler;
 
 public class CommandHandlerGem5 extends CommandHandler{
-	
-	private static CommandHandlerGem5 INSTANCE;
-	
-	public static CommandHandlerGem5 getInstance() {
-		if (INSTANCE == null) {
-			INSTANCE = new CommandHandlerGem5();
-		}
-		return INSTANCE;
-	}
 
+	public CommandHandlerGem5() {
+		parameters = new String[] {"system", "executable", "methodname", "parameter"};
+	}
+	
 	@Override
 	public CopyCommand getCopyCommand(Map<String, Serializable> parameterMap, String source_path) {
 		return new CopyCommandGem5(source_path);
@@ -47,7 +42,4 @@ public class CommandHandlerGem5 extends CommandHandler{
 	public ErrorConsumer getErrorConsumer() {
 		return new ErrorDetector();
 	}
-
-	
-	
 }
