@@ -8,35 +8,35 @@ import org.palladiosimulator.hwsimcoupling.commands.SimulationCommand;
 import org.palladiosimulator.hwsimcoupling.util.MapHelper;
 
 public class SimulationCommandGem5 extends CommandGem5 implements SimulationCommand {
-	
-	private String executable;
-	private String system;
-	private String methodname;
-	private String parameters;
-	
-	public SimulationCommandGem5(Map<String, Serializable> parameterMap) {
-		this.executable = MapHelper.get_required_value_from_map(parameterMap, "executable");
-		this.system = MapHelper.get_required_value_from_map(parameterMap, "system");
-		this.methodname = MapHelper.get_required_value_from_map(parameterMap, "methodname");
-		this.parameters = MapHelper.get_required_value_from_map(parameterMap, "parameter");
-	}
 
-	@Override
-	public List<String> get_command() {
-		List<String> command = get_shell();
-		command.add("docker");
-		command.add("exec");
-		command.add("gem5");
-		command.add("build/X86/gem5.opt");
-		command.add(destination_path + system);
-		command.add(executable);
-		if (!methodname.equals("main")) {
-			command.add(methodname);
-		}
-		for (String parameter : parameters.split(" ")) {
-			command.add(parameter);
-		}
-		return command;
-	}
+    private String executable;
+    private String system;
+    private String methodname;
+    private String parameters;
+
+    public SimulationCommandGem5(Map<String, Serializable> parameterMap) {
+        this.executable = MapHelper.getRequiredValueFromMap(parameterMap, "executable");
+        this.system = MapHelper.getRequiredValueFromMap(parameterMap, "system");
+        this.methodname = MapHelper.getRequiredValueFromMap(parameterMap, "methodname");
+        this.parameters = MapHelper.getRequiredValueFromMap(parameterMap, "parameter");
+    }
+
+    @Override
+    public List<String> getCommand() {
+        List<String> command = getShell();
+        command.add("docker");
+        command.add("exec");
+        command.add("gem5");
+        command.add("build/X86/gem5.opt");
+        command.add(destination_path + system);
+        command.add(executable);
+        if (!methodname.equals("main")) {
+            command.add(methodname);
+        }
+        for (String parameter : parameters.split(" ")) {
+            command.add(parameter);
+        }
+        return command;
+    }
 
 }
